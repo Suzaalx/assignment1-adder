@@ -1,0 +1,61 @@
+### TEST1
+cat test/num.snek => 37%
+cat test/num.s =>
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 37
+  ret
+
+./test/num.run => 37
+
+### TEST2
+cat test/add1.snek => (add1 5)%
+cat test/add1.s =>
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 5
+  add rax, 1
+  ret
+
+./test/add1.run => 6
+
+### TEST3
+cat test/negate.snek => (negate 7)%
+cat test/negate.s =>
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 7
+  imul rax, -1
+  ret
+
+./test/negate.run => -7
+
+### TEST4
+cat test/complex.snek => (sub1 (sub1 (add1 73)))%
+cat test/complex.s =>
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 73
+  add rax, 1
+  sub rax, 1
+  sub rax, 1
+  ret
+
+./test/complex.run => 72
+
+### TEST5
+cat test/negate_add1.snek => (negate (add1 3))%
+cat test/negate_add1.s =>
+section .text
+global our_code_starts_here
+our_code_starts_here:
+  mov rax, 3
+  add rax, 1
+  imul rax, -1
+  ret
+
+./test/negate_add1.run => -4

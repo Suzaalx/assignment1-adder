@@ -1,0 +1,20 @@
+# Rust build artifacts
+target/
+
+# Generated assembly and executables
+*.s
+*.run
+*.o
+*.a
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local instructions (do not submit)
+GITHUB_UPLOAD.md
